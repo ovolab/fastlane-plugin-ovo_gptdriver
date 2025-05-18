@@ -1,0 +1,15 @@
+lane :test do
+  build_path = "./build/test.ipa.zip"
+  organisation_key = "b53e574f12d2f0c90c80151e374054c96a1832f5" #"YOUR_ORGKEY_12345"
+  platform = "ios"
+  metadata = "" #"{\"branch\":\"dev-feature-007\"}"
+
+  build_id = ovo_gptdriver_upload_build(
+    build_path: build_path,
+    organisation_key: organisation_key,
+    platform: platform,
+    metadata: metadata
+  )
+
+  puts "GPT Driver upload with build id: #{build_id}"
+end
